@@ -25,10 +25,6 @@ function transform(arr) {
           result.splice(i+1,1);
           break;
         }
-        case '--discrard-next':{
-          result.splice(i+1,1);
-          break;
-        }
         case('--discard-prev'):{
           result.splice(i-1,1);
           break;
@@ -37,10 +33,10 @@ function transform(arr) {
           if(result[i]!=='discard-next') result[i] = result[i+1];
           break;
         }
-        // case('--double-prev'):{
-        //   if(result[i]!=='discard-next') result[i]=result[i-1];
-        //   break;
-        // }
+        case('--double-prev'):{
+          if(result[i]!=='discard-next') result[i]=result[i-1];
+          break;
+        }
       }
     }
   })
